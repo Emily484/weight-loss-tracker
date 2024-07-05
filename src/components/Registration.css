@@ -1,0 +1,33 @@
+.registrationForm {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin: auto;
+  }
+  
+  .registrationForm h2 {
+    text-align: center;
+  }
+  
+  .registrationForm div {
+    margin-bottom: 15px;
+  }
+  
+  .registrationForm label {
+    margin-bottom: 5px;
+  }
+  
+  .registrationForm input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .registrationForm button {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
