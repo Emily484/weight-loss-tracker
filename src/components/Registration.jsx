@@ -6,8 +6,26 @@ function Registration() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // Implement registration logic here
-    console.log('Registration submitted', { username, password });
+    try {
+      const response = await fetch('http://localhost:5099/api/auth/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ username, password }),
+      });
+      const data = await response.json();
+      if (response.ok) {
+        console.log('Registration successful', data);
+        // Handle registration success (e.g., redirect, notify user)
+      } else {
+        console.error('Registration failed', data.message);
+        // Handle registration failure
+      }
+    } catch (error) {
+      console.error('Network error', error);
+      // Handle network error
+    }
   };
 
   return (

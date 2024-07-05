@@ -6,8 +6,26 @@ function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // Implement login logic here
-    console.log('Login submitted', { username, password });
+    try {
+      const response = await fetch('http://localhost:5099/api/auth/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ username, password }),
+      });
+      const data = await response.json();
+      if (response.ok) {
+        console.log('Login successful', data);
+        // Handle login success (e.g., redirect, store token)
+      } else {
+        console.error('Login failed', data.message);
+        // Handle login failure
+      }
+    } catch (error) {
+      console.error('Network error', error);
+      // Handle network error
+    }
   };
 
   return (
