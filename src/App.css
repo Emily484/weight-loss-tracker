@@ -46,6 +46,19 @@
   cursor: pointer;
 }
 
+.showEntryFormButton {
+  background-color: #007bff; /* Blue background */
+  color: white; /* White text */
+  border: none;
+  border-radius: 50%; /* Circular shape */
+  font-size: 24px; /* Larger font size for visibility */
+  padding: 10px 15px; /* Padding to increase size */
+  cursor: pointer; /* Cursor indicates clickable */
+  position: fixed; /* Fixed position */
+  bottom: 20px; /* Positioned at the bottom of the viewport */
+  right: 20px; /* Positioned to the right of the viewport */
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import { useAuth } from '../../context/AuthController';
 import './Login.css'
 
 function Login() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const { login } = useAuth();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -18,7 +20,7 @@ function Login() {
       const data = await response.json();
       if (response.ok) {
         console.log('Login successful', data);
-        // Handle login success (e.g., redirect, store token)
+        login(); // Update authentication state
       } else {
         console.error('Login failed', data.message);
         // Handle login failure

@@ -1,10 +1,33 @@
-import React, { useState } from 'react';
-import Login from './components/Login';
-import Registration from './components/Registration';
+import React from 'react';
+import { AuthProvider, useAuth } from './context/AuthController.jsx';
+import Login from './components/Auth/Login';
+import Registration from './components/Auth/Registration';
+import WeightEntryForm from './components/WeightEntries/WeightEntryForm';
+import WeightEntryList from './components/WeightEntries/WeightEntryList';
 import './App.css';
 
-function App() {
-  const [showLogin, setShowLogin] = useState(false);
+function AppContent() {
+  const { isAuthenticated } = useAuth();
+  const [showLogin, setShowLogin] = React.useState(false);
+  const [showEntryForm, setShowEntryForm] = React.useState(false);
+
+  if (isAuthenticated) {
+    return (
+      <>
+       {/* <WeightEntryList /> */}
+       {showEntryForm ? (
+            <WeightEntryForm onClose={() => setShowEntryForm(false)} />
+          ) :
+          (
+            <>
+            <WeightEntryList />
+            <button className='showEntryFormButton' onClick={() => setShowEntryForm(true)}>+</button>
+            </>
+          )
+        }
+      </>
+   );
+  }
 
   return (
     <div className='App-container'>
@@ -13,6 +36,14 @@ function App() {
         {showLogin ? 'Register' : 'Login'}
       </button>
     </div>
+  );
+}
+
+function App() {
+  return (
+    <AuthProvider>
+      <AppContent />
+    </AuthProvider>
   );
 }
 

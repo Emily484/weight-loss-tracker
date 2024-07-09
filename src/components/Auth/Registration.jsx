@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import { useAuth } from '../../context/AuthController';
 import './Registration.css'
 
 function Registration() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const { login } = useAuth();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -18,7 +20,7 @@ function Registration() {
       const data = await response.json();
       if (response.ok) {
         console.log('Registration successful', data);
-        // Handle registration success (e.g., redirect, notify user)
+        login(); // Update authentication state
       } else {
         console.error('Registration failed', data.message);
         // Handle registration failure
