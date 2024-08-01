@@ -4,6 +4,8 @@ import Login from './components/Auth/Login';
 import Registration from './components/Auth/Registration';
 import WeightEntryForm from './components/WeightEntries/WeightEntryForm';
 import WeightEntryList from './components/WeightEntries/WeightEntryList';
+import GoalForm from './components/Goals/GoalForm.jsx'
+import GoalList from './components/Goals/GoalList.jsx'
 import './App.css';
 
 function AppContent() {
@@ -15,6 +17,8 @@ function AppContent() {
     return (
       <>
        {/* <WeightEntryList /> */}
+       <GoalForm />
+       <GoalList />
        {showEntryForm ? (
             <WeightEntryForm onClose={() => setShowEntryForm(false)} />
           ) :

@@ -1,0 +1,46 @@
+.goalForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.goalForm h2, .goalForm div, .goalForm label, .goalForm input, .goalForm button {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.goalForm h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.goalForm div {
+    margin-bottom: 15px;
+}
+
+.goalForm label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.goalForm input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.goalForm button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}

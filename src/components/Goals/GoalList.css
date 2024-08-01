@@ -1,0 +1,25 @@
+.goalList {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+.goalList h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.goalList ul {
+    list-style: none;
+    padding: 0;
+}
+.goalList li {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
